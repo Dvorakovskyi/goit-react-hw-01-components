@@ -1,33 +1,33 @@
 import PropTypes from 'prop-types';
+import { StyledProfile, StyledDescription, StyledImgProfile, StyledWrapper, StyledStats, StyledItem } from './Profile.styled';   
 
 const Profile = ({username, tag, location, avatar='https://cdn-icons-png.flaticon.com/512/1077/1077012.png', stats}) => {
     return (
-        <div className="profile">
-  <div className="description">
-    <img
+  <StyledProfile>
+  <StyledWrapper>
+    <StyledImgProfile
       src={avatar}
       alt="User avatar"
-      className="avatar"
     />
-    <p className="name">{username}</p>
-    <p className="tag">{tag}</p>
-    <p className="location">{location}</p>
-  </div>
-  <ul className="stats">
-    <li>
-      <span className="label">Followers</span>
-      <span className="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span className="label">Views</span>
-      <span className="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span className="label">Likes</span>
-      <span className="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>
+    <StyledDescription>{username}</StyledDescription>
+    <StyledDescription>{tag}</StyledDescription>
+    <StyledDescription>{location}</StyledDescription>
+  </StyledWrapper>
+  <StyledStats>
+    <StyledItem>
+      <span>Followers</span>
+      <span>{stats.followers}</span>
+    </StyledItem>
+    <StyledItem>
+      <span>Views</span>
+      <span>{stats.views}</span>
+    </StyledItem>
+    <StyledItem>
+      <span>Likes</span>
+      <span>{stats.likes}</span>
+    </StyledItem>
+  </StyledStats>
+</StyledProfile>
     )
 }
 
