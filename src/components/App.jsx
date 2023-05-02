@@ -24,5 +24,4 @@ const App = () => {
   );
 };
 
-console.log(transactions);
 export default App;

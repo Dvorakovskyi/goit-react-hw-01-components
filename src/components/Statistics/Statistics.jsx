@@ -4,7 +4,7 @@ import { StyledStatistics, StaledTitle, StyledStatisticsList, StyledStatisticsIt
 const Statisticts = ({title, stats}) => {
     return (
         <StyledStatistics>
-            <StaledTitle>{title}</StaledTitle>
+            {title && <StaledTitle>{title}</StaledTitle>}
             <StyledStatisticsList>
                 {stats.map(({id, label, percentage}) =>
                     <StyledStatisticsItem key={id}
